@@ -1,0 +1,14 @@
+C:\Sistema Comercio\SysComercio\SysComercio\obj\Debug\SysComercio.csprojAssemblyReference.cache
+C:\Sistema Comercio\SysComercio\SysComercio\obj\Debug\SysComercio.csproj.CoreCompileInputs.cache
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\SysComercio.exe.config
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\SysComercio.exe
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\SysComercio.pdb
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\CamadaApresentacao.dll
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\CamadaNegocio.dll
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\CamadaDados.dll
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\CamadaApresentacao.pdb
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\CamadaNegocio.pdb
+C:\Sistema Comercio\SysComercio\SysComercio\bin\Debug\CamadaDados.pdb
+C:\Sistema Comercio\SysComercio\SysComercio\obj\Debug\SysComercio.csproj.CopyComplete
+C:\Sistema Comercio\SysComercio\SysComercio\obj\Debug\SysComercio.exe
+C:\Sistema Comercio\SysComercio\SysComercio\obj\Debug\SysComercio.pdb
