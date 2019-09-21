@@ -220,7 +220,7 @@ namespace CamadaDados
                 SqlCon.ConnectionString = Conexao.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spbuscar_nome";
+                SqlCmd.CommandText = "spapresentacao_nome";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
 
