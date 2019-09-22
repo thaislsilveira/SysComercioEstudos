@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace CamadaDados
 {
-    class DApresentacao
+    public class DApresentacao
     {
         private int _Idapresentacao;
         private string _Nome;
