@@ -282,5 +282,75 @@ namespace CamadaApresentacao
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtDescricao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtIdCategoria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TtMensagem_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

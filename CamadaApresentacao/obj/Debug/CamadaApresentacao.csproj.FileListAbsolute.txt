@@ -11,3 +11,4 @@ C:\Sistema Comercio\SysComercio\CamadaApresentacao\bin\Debug\CamadaDados.pdb
 C:\Sistema Comercio\SysComercio\CamadaApresentacao\obj\Debug\CamadaApresentacao.csproj.CopyComplete
 C:\Sistema Comercio\SysComercio\CamadaApresentacao\obj\Debug\CamadaApresentacao.dll
 C:\Sistema Comercio\SysComercio\CamadaApresentacao\obj\Debug\CamadaApresentacao.pdb
+C:\Sistema Comercio\SysComercio\CamadaApresentacao\obj\Debug\CamadaApresentacao.frmApresentacao.resources

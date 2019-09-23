@@ -73,6 +73,7 @@
             this.label1.Size = new System.Drawing.Size(116, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Categorias";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // tabControl1
             // 
@@ -83,6 +84,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(665, 367);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.TabControl1_SelectedIndexChanged);
             this.tabControl1.DoubleClick += new System.EventHandler(this.TabControl1_DoubleClick);
             // 
             // tabPage1
@@ -102,6 +104,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
             // 
             // chkDeletar
             // 
@@ -141,11 +144,12 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(350, 87);
+            this.lblTotal.Location = new System.Drawing.Point(442, 91);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(35, 13);
             this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "label3";
+            this.lblTotal.Click += new System.EventHandler(this.LblTotal_Click);
             // 
             // btnImprimir
             // 
@@ -155,6 +159,7 @@
             this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
             // btnDeletar
             // 
@@ -204,6 +209,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Configurações";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.TabPage2_Click);
             // 
             // groupBox1
             // 
@@ -223,6 +229,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categorias";
+            this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
             // btnCancelar
             // 
@@ -272,6 +279,7 @@
             this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescricao.Size = new System.Drawing.Size(370, 53);
             this.txtDescricao.TabIndex = 5;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.TxtDescricao_TextChanged);
             // 
             // txtNome
             // 
@@ -279,6 +287,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(141, 20);
             this.txtNome.TabIndex = 4;
+            this.txtNome.TextChanged += new System.EventHandler(this.TxtNome_TextChanged);
             // 
             // txtIdCategoria
             // 
@@ -286,6 +295,7 @@
             this.txtIdCategoria.Name = "txtIdCategoria";
             this.txtIdCategoria.Size = new System.Drawing.Size(141, 20);
             this.txtIdCategoria.TabIndex = 3;
+            this.txtIdCategoria.TextChanged += new System.EventHandler(this.TxtIdCategoria_TextChanged);
             // 
             // label5
             // 
@@ -295,6 +305,7 @@
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 2;
             this.label5.Text = "Descrição";
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // label4
             // 
@@ -304,6 +315,7 @@
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Nome";
+            this.label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // label3
             // 
@@ -313,6 +325,7 @@
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Código";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // errorIcone
             // 
@@ -321,6 +334,7 @@
             // ttMensagem
             // 
             this.ttMensagem.IsBalloon = true;
+            this.ttMensagem.Popup += new System.Windows.Forms.PopupEventHandler(this.TtMensagem_Popup);
             // 
             // frmCategoria
             // 
