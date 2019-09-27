@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace CamadaDados
 {
-    class DFornecedor
+   public class DFornecedor
     {
         private int _Idfornecedor;
         private string _Empresa;
@@ -16,6 +16,7 @@ namespace CamadaDados
         private string _TipoDocumento;
         private string _NumDocumento;
         private string _Endereco;
+        private string _Telefone;
         private string _Email;
         private string _Url;
         private string _TextoBuscar;
@@ -25,9 +26,12 @@ namespace CamadaDados
         public string TipoDocumento { get => _TipoDocumento; set => _TipoDocumento = value; }
         public string NumDocumento { get => _NumDocumento; set => _NumDocumento = value; }
         public string Endereco { get => _Endereco; set => _Endereco = value; }
+
+        public string Telefone { get => _Telefone; set => _Telefone = value; }
         public string Email { get => _Email; set => _Email = value; }
         public string Url { get => _Url; set => _Url = value; }
         public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
+       
 
 
         // Construtor Vazio 
@@ -38,7 +42,7 @@ namespace CamadaDados
 
         //Construtor com Parametros
         public DFornecedor(int idfornecedor, string empresa, string setorcomercial, string tipodocumento, 
-            string numdocumento, string endereco, string email, string url)
+            string numdocumento, string endereco, string telefone, string email, string url)
         {
             this.Idfornecedor = idfornecedor;
             this.Empresa = empresa;
@@ -46,6 +50,7 @@ namespace CamadaDados
             this.TipoDocumento = tipodocumento;
             this.NumDocumento = numdocumento;
             this.Endereco = endereco;
+            this.Telefone = telefone;
             this.Email = email;
             this.Url = url; 
 
@@ -113,6 +118,13 @@ namespace CamadaDados
                 ParEndereco.Size = 150;
                 ParEndereco.Value = Fornecedor.Endereco;
                 SqlCmd.Parameters.Add(ParEndereco);
+
+                SqlParameter ParTelefone = new SqlParameter();
+                ParTelefone.ParameterName = "@telefone";
+                ParTelefone.SqlDbType = SqlDbType.VarChar;
+                ParTelefone.Size = 50;
+                ParTelefone.Value = Fornecedor.Telefone;
+                SqlCmd.Parameters.Add(ParTelefone);
 
 
                 SqlParameter ParEmail = new SqlParameter();
@@ -209,6 +221,13 @@ namespace CamadaDados
                 ParEndereco.Value = Fornecedor.Endereco;
                 SqlCmd.Parameters.Add(ParEndereco);
 
+                SqlParameter ParTelefone = new SqlParameter();
+                ParTelefone.ParameterName = "@telefone";
+                ParTelefone.SqlDbType = SqlDbType.VarChar;
+                ParTelefone.Size = 50;
+                ParTelefone.Value = Fornecedor.Telefone;
+                SqlCmd.Parameters.Add(ParTelefone);
+
 
                 SqlParameter ParEmail = new SqlParameter();
                 ParEmail.ParameterName = "@email";
@@ -302,7 +321,7 @@ namespace CamadaDados
         }
 
         //Método Buscar Nome
-        public DataTable BuscarNome(DFornecedor Fornecedor)
+        public DataTable BuscarNomeEmpresa(DFornecedor Fornecedor)
         {
             DataTable DtResultado = new DataTable("fornecedor");
             SqlConnection SqlCon = new SqlConnection();

@@ -30,10 +30,10 @@ namespace CamadaNegocio
         }
 
         //Método Deletar
-        public static string Excluir(int idpresentacao)
+        public static string Excluir(int idapresentacao)
         {
             DApresentacao Obj = new CamadaDados.DApresentacao();
-            Obj.Idapresentacao = idpresentacao;
+            Obj.Idapresentacao = idapresentacao;
 
             return Obj.Excluir(Obj);
         }
