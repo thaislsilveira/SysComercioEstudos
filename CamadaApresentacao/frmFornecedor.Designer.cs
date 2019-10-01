@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNumDocumento = new System.Windows.Forms.TextBox();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.TextBox();
@@ -58,15 +60,13 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.txtIdCategoria = new System.Windows.Forms.TextBox();
+            this.txtIdFornecedor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.ttMensagem = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcone = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtNumDocumento = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLista)).BeginInit();
@@ -218,7 +218,7 @@
             this.groupBox1.Controls.Add(this.btnNovo);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnSalvar);
-            this.groupBox1.Controls.Add(this.txtIdCategoria);
+            this.groupBox1.Controls.Add(this.txtIdFornecedor);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -228,6 +228,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categorias";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(305, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(117, 13);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Número do Documento";
+            // 
+            // txtNumDocumento
+            // 
+            this.txtNumDocumento.Location = new System.Drawing.Point(425, 29);
+            this.txtNumDocumento.Name = "txtNumDocumento";
+            this.txtNumDocumento.Size = new System.Drawing.Size(141, 20);
+            this.txtNumDocumento.TabIndex = 22;
             // 
             // txtUrl
             // 
@@ -361,12 +377,12 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
-            // txtIdCategoria
+            // txtIdFornecedor
             // 
-            this.txtIdCategoria.Location = new System.Drawing.Point(122, 41);
-            this.txtIdCategoria.Name = "txtIdCategoria";
-            this.txtIdCategoria.Size = new System.Drawing.Size(141, 20);
-            this.txtIdCategoria.TabIndex = 3;
+            this.txtIdFornecedor.Location = new System.Drawing.Point(122, 41);
+            this.txtIdFornecedor.Name = "txtIdFornecedor";
+            this.txtIdFornecedor.Size = new System.Drawing.Size(141, 20);
+            this.txtIdFornecedor.TabIndex = 3;
             // 
             // label5
             // 
@@ -414,22 +430,6 @@
             // 
             this.errorIcone.ContainerControl = this;
             // 
-            // txtNumDocumento
-            // 
-            this.txtNumDocumento.Location = new System.Drawing.Point(425, 29);
-            this.txtNumDocumento.Name = "txtNumDocumento";
-            this.txtNumDocumento.Size = new System.Drawing.Size(141, 20);
-            this.txtNumDocumento.TabIndex = 22;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(305, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(117, 13);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Número do Documento";
-            // 
             // frmFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,6 +439,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmFornecedor";
             this.Text = "frmFornecedor";
+            this.Load += new System.EventHandler(this.FrmFornecedor_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -476,7 +477,7 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox txtIdCategoria;
+        private System.Windows.Forms.TextBox txtIdFornecedor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

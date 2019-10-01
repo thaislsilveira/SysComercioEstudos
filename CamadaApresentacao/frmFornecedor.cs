@@ -124,7 +124,13 @@ namespace CamadaApresentacao
 
         private void BtnNovo_Click(object sender, EventArgs e)
         {
-
+            this.eNovo = true;
+            this.eEditar = false;
+            this.botoes();
+            this.Limpar();
+            this.Habilitar(true);
+            this.txtEmpresa.Focus();
+            this.txtIdFornecedor.Enabled = false;
         }
 
         private void ChkDeletar_CheckedChanged(object sender, EventArgs e)
@@ -139,12 +145,12 @@ namespace CamadaApresentacao
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-
+            this.BuscarNome();
         }
 
         private void TxtBuscar_TextChanged(object sender, EventArgs e)
         {
-
+            this.BuscarNome();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -159,12 +165,79 @@ namespace CamadaApresentacao
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                string resp = "";
+                if (this.txtEmpresa.Text == string.Empty)
+                {
+                    MensagemErro("Preencha todos os campos");
+                    errorIcone.SetError(txtEmpresa, "Insira o nome da empresa");
+                }
+                else
+                {
+                    if (this.eNovo)
+                    {
+                        resp = NFornecedor.Inserir(this.txtEmpresa.Text.Trim().ToUpper(),
+                            this.txtSetorComercial.Text.Trim(),
+                            this.txtTipoDocumento.Text.Trim(),
+                            this.txtNumDocumento.Text.Trim(),
+                            this.txtEndereco.Text.Trim(),
+                            this.txtTelefone.Text.Trim(),
+                            this.txtEmail.Text.Trim(),
+                            this.txtUrl.Text.Trim());
+                    }
+                    else
+                    {
+                        resp = NFornecedor.Editar(Convert.ToInt32(this.txtIdFornecedor.Text),
+                            this.txtEmpresa.Text.Trim().ToUpper(),
+                            this.txtSetorComercial.Text.Trim(),
+                            this.txtTipoDocumento.Text.Trim(),
+                            this.txtNumDocumento.Text.Trim(),
+                            this.txtEndereco.Text.Trim(),
+                            this.txtTelefone.Text.Trim(),
+                            this.txtEmail.Text.Trim(),
+                            this.txtUrl.Text.Trim());
+                    }
+                    if (resp.Equals("OK"))
+                    {
+                        if (this.eNovo)
+                        {
+                            this.MensagemOK("Registro salvo com sucesso");
+                        }
+                        else
+                        {
+                            this.MensagemOK("Registro editado com sucesso");
+                        }
+                    }
+                    else
+                    {
+                        this.MensagemErro(resp);
+                    }
+                    this.eNovo = false;
+                    this.eEditar = false;
+                    this.botoes();
+                    this.Limpar();
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TxtUrl_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmFornecedor_Load(object sender, EventArgs e)
+        {
+            this.Top = 0;
+            this.Left = 0;
+            this.Mostrar();
+            this.Habilitar(false);
+            this.botoes();
         }
     }
 }
