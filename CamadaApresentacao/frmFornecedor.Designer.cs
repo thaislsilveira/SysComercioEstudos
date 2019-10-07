@@ -128,6 +128,7 @@
             this.dataLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataLista.Size = new System.Drawing.Size(624, 207);
             this.dataLista.TabIndex = 6;
+            this.dataLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataLista_CellDoubleClick);
             // 
             // Deletar
             // 

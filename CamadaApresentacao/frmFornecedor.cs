@@ -135,12 +135,52 @@ namespace CamadaApresentacao
 
         private void ChkDeletar_CheckedChanged(object sender, EventArgs e)
         {
+            if (chkDeletar.Checked)
+            {
+                this.dataLista.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dataLista.Columns[0].Visible = false;
+            }
 
         }
 
         private void BtnDeletar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DialogResult Opcao;
+                Opcao = MessageBox.Show("Realmente Deseja Apagar os Registros? ", "Sistema Comércio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Opcao == DialogResult.OK)
+                {
+                    string Codigo;
+                    string Resp = "";
 
+                    foreach (DataGridViewRow row in dataLista.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToString(row.Cells[1].Value);
+                            Resp = NApresentacao.Excluir(Convert.ToInt32(Codigo));
+
+                            if (Resp.Equals("OK"))
+                            {
+                                this.MensagemOK("Registro excluído com sucesso!");
+                            }
+                            else
+                            {
+                                this.MensagemErro(Resp);
+                            }
+                        }
+                    }
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -155,12 +195,25 @@ namespace CamadaApresentacao
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.eNovo = false;
+            this.eEditar = false;
+            this.botoes();
+            this.Habilitar(false);
+            this.Limpar();
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-
+            if (this.txtIdFornecedor.Text.Equals(""))
+            {
+                this.MensagemErro("Selecione um registro para inserir");
+            }
+            else
+            {
+                this.eEditar = true;
+                this.botoes();
+                this.Habilitar(true);
+            }
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -238,6 +291,20 @@ namespace CamadaApresentacao
             this.Mostrar();
             this.Habilitar(false);
             this.botoes();
+        }
+
+        private void DataLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtIdFornecedor.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["idfornecedor"].Value);
+            this.txtEmpresa.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["empresa"].Value);
+            this.txtSetorComercial.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["setor_comercial"].Value);
+            this.txtTipoDocumento.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["tipo_documento"].Value);
+            this.txtNumDocumento.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["num_documento"].Value);
+            this.txtEndereco.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["endereco"].Value);
+            this.txtTelefone.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["telefone"].Value);
+            this.txtEmail.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["email"].Value);
+            this.txtUrl.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["url"].Value);
+            this.tabControl1.SelectedIndex = 1;
         }
     }
 }
